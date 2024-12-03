@@ -72,7 +72,7 @@ jobs:
           VITE_TWITTER: ${{ secrets.VITE_TWITTER }}
         run: |
           docker-compose -f ./docker-compose.yml build
-          docker tag my-react-app:latest alemu2502/my-react-app:latest
+          docker tag reactjs-with-docker_react-app:latest alemu2502/my-react-app:latest
           docker push alemu2502/my-react-app:latest
 
       # Deploy to Netlify
