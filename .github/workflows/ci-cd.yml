@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -63,7 +63,7 @@ jobs:
           VITE_TWITTER: ${{ secrets.VITE_TWITTER }}
         run: |
           docker-compose -f ./docker-compose.yml build
-          docker tag my-react-docker-app:latest alemu2502/my-react-docker-app:latest
+          docker tag alemu2502/my-react-docker-app:latest alemu2502/my-react-docker-app:latest
           docker push alemu2502/my-react-docker-app:latest
 
       - name: Deploy to Netlify
