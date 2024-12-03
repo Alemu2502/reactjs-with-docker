@@ -267,14 +267,6 @@ Note down your Service ID and Template ID from the Email Services and Templates 
 
 so after that Add these Environment Variables to github secrets.
 
- Install EmailJS in Your Project:
-
- Install the EmailJS SDK:
-
- npm install emailjs-com
-
- Implement the Contact Form:
-
 Testing
 
 Local Testing: 
