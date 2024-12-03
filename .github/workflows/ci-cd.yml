@@ -60,25 +60,6 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      # Debug environment variables
-      - name: Debug environment variables
-        env:
-          VITE_SERVICE_ID: ${{ secrets.VITE_SERVICE_ID }}
-          VITE_TEMPLATE_ID: ${{ secrets.VITE_TEMPLATE_ID }}
-          VITE_USER_ID: ${{ secrets.VITE_USER_ID }}
-          VITE_GITHUB: ${{ secrets.VITE_GITHUB }}
-          VITE_FACEBOOK: ${{ secrets.VITE_FACEBOOK }}
-          VITE_LINKEDIN: ${{ secrets.VITE_LINKEDIN }}
-          VITE_TWITTER: ${{ secrets.VITE_TWITTER }}
-        run: |
-          echo "VITE_SERVICE_ID=$VITE_SERVICE_ID"
-          echo "VITE_TEMPLATE_ID=$VITE_TEMPLATE_ID"
-          echo "VITE_USER_ID=$VITE_USER_ID"
-          echo "VITE_GITHUB=$VITE_GITHUB"
-          echo "VITE_FACEBOOK=$VITE_FACEBOOK"
-          echo "VITE_LINKEDIN=$VITE_LINKEDIN"
-          echo "VITE_TWITTER=$VITE_TWITTER"
-
       # Build and push Docker image
       - name: Build and push Docker image
         env:
