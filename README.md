@@ -94,6 +94,9 @@ Here are the environment variables used:
  5. VITE_FACEBOOK
  6. VITE_LINKEDIN
  7. VITE_TWITTER
+ 8. DOCKER_USERNAME 
+ 9. DOCKER_PASSWORD 
+ so by creating yout docker hub account here you can deploy  the docker images to docker hub automatically whenever you push the code to your repo as i used ci/cd pipe lines using your docker hub user name and password by stored them in github secrets and you should replace my docker user name alemu2502 to your docker user name in .github/workflows/ci-cd pipelines 
 
 To set these variables in GitHub Secrets, you can navigate to your repository's settings and add them under the "Secrets and variables" section.
 
@@ -152,6 +155,25 @@ Add User to Docker Group (optional):
 If you want to run Docker commands without sudo, add your user to the Docker group:
 
 sudo usermod -aG docker $USER
+
+By creating your Docker Hub account here, you can set up automated deployment of Docker images to Docker Hub whenever you push code to your GitHub repository. This process leverages CI/CD pipelines using your Docker Hub username and password stored in GitHub Secrets. Follow these steps:
+
+Create a Docker Hub Account:
+
+Sign up for a Docker Hub account here.
+
+Set Up GitHub Secrets:
+
+Navigate to your GitHub repository.
+
+Go to Settings > Secrets and variables > Actions > New repository secret.
+
+Add the following secrets including all the above environment variabes:
+
+DOCKER_HUB_USERNAME: Your Docker Hub username.
+
+DOCKER_PASSWORD Your Docker Hub password 
+
 
 For more information on setting up WSL 2 with Docker Desktop, see WSL Documentation: https://docs.microsoft.com/en-us/windows/wsl/
 
