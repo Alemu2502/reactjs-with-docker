@@ -46,23 +46,23 @@ Clone the repository:
 
 git clone https://github.com/Alemu2502/reactjs-portfolio.git
 
-cd reactjs-portfolio
+   cd reactjs-portfolio
 
 Install dependencies:
 
-npm install
+   npm install
 
 ### Running the Project
 
 Development Mode
-To run the project in development mode:
+  To run the project in development mode:
 
-npm start
+  npm start
 
-Production Build
-To create a production build: 
+  Production Build
+  To create a production build: 
 
-npm run build
+   npm run build
 
 ### CI/CD Pipeline
 
@@ -92,13 +92,13 @@ If you prefer, you can use them as public values.
 
 Here are the environment variables used:
 
- VITE_SERVICE_ID
- VITE_TEMPLATE_ID
- VITE_USER_ID
- VITE_GITHUB
- VITE_FACEBOOK
- VITE_LINKEDIN
- VITE_TWITTER
+ 1. VITE_SERVICE_ID
+ 2. VITE_TEMPLATE_ID
+ 3. VITE_USER_ID
+ 4. VITE_GITHUB
+ 5. VITE_FACEBOOK
+ 6. VITE_LINKEDIN
+ 7. VITE_TWITTER
 
 To set these variables in Netlify, you can navigate to the site's settings and add them under the "Build & Deploy" section.
 
