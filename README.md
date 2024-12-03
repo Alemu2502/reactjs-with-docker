@@ -123,9 +123,9 @@ Hardware:
 
 Download Docker Desktop:
 
-Docker Desktop for Windows: [here](https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe)
+Docker Desktop for Windows [here](https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe)
 
-Docker Desktop for Mac:[here](https://desktop.docker.com/mac/stable/Docker.dmg)
+Docker Desktop for Mac [here](https://desktop.docker.com/mac/stable/Docker.dmg)
 
 Installing Docker Desktop
 
