@@ -96,7 +96,9 @@ Here are the environment variables used:
  7. VITE_TWITTER
  8. DOCKER_USERNAME 
  9. DOCKER_PASSWORD 
- so by creating yout docker hub account here you can deploy  the docker images to docker hub automatically whenever you push the code to your repo as i used ci/cd pipe lines using your docker hub user name and password by stored them in github secrets and you should replace my docker user name alemu2502 to your docker user name in .github/workflows/ci-cd pipelines 
+
+ so by creating your docker hub account here you can deploy  the docker images to docker hub automatically whenever you push the code to your repo as i used ci/cd pipe lines
+  using your docker hub user name and password by stored them in github secrets and you should replace my docker user name alemu2502 to your docker user name in .github/workflows/ci-cd pipelines 
 
 To set these variables in GitHub Secrets, you can navigate to your repository's settings and add them under the "Secrets and variables" section.
 
@@ -110,19 +112,20 @@ To use Docker, ensure you meet the following prerequisites:
 2. Operating System:
 
 Windows 11 64-bit: Home or Pro version 22H2 or higher, or Enterprise or Education version 22H2 or higher.
+
 Windows 10 64-bit: Minimum required is Home or Pro 22H2 (build 19045) or higher, or Enterprise or Education 22H2 (build 19045) or higher.
 
 Hardware:
 
 1. 64-bit processor with Second Level Address Translation (SLAT)
 2. 4GB system RAM
-3. Enable hardware virtualization in BIOS. For more information, see Virtualization.
+3. Enable hardware virtualization in BIOS. 
 
 Download Docker Desktop:
 
-Docker Desktop for Windows: https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe
+Docker Desktop for Windows: [here](https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe)
 
-Docker Desktop for Mac: https://desktop.docker.com/mac/stable/Docker.dmg
+Docker Desktop for Mac:[here](https://desktop.docker.com/mac/stable/Docker.dmg)
 
 Installing Docker Desktop
 
@@ -137,9 +140,9 @@ Enabling WSL 2 (Windows Users)
 Enable Windows Subsystem for Linux: 
 Open PowerShell as Administrator and run:
 
-wsl --install
-sudo apt-get update
-sudo apt-get upgrade
+1. wsl --install
+2. sudo apt-get update
+3. sudo apt-get upgrade
 
 Enable Virtual Machine Platform:
 
@@ -149,6 +152,7 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 Install Docker in WSL:
 
 After setting up WSL, install Docker:
+
 sudo apt-get install docker.io
 
 Add User to Docker Group (optional):
@@ -156,11 +160,11 @@ If you want to run Docker commands without sudo, add your user to the Docker gro
 
 sudo usermod -aG docker $USER
 
-By creating your Docker Hub account here, you can set up automated deployment of Docker images to Docker Hub whenever you push code to your GitHub repository. This process leverages CI/CD pipelines using your Docker Hub username and password stored in GitHub Secrets. Follow these steps:
+By creating your Docker Hub account [here](https://hub.docker.com/signup), you can set up automated deployment of Docker images to Docker Hub whenever you push code to your GitHub repository. This process leverages CI/CD pipelines using your Docker Hub username and password stored in GitHub Secrets. Follow these steps:
 
 Create a Docker Hub Account:
 
-Sign up for a Docker Hub account here.
+Sign up for a Docker Hub account [here](https://hub.docker.com/signup).
 
 Set Up GitHub Secrets:
 
@@ -174,8 +178,46 @@ DOCKER_HUB_USERNAME: Your Docker Hub username.
 
 DOCKER_PASSWORD Your Docker Hub password 
 
+Contributing:
 
-For more information on setting up WSL 2 with Docker Desktop, see WSL Documentation: https://docs.microsoft.com/en-us/windows/wsl/
+Since the Docker image is public, you can contribute to the project by opening pull requests (PRs). Here’s how you can do it:
+
+Fork the Repository:
+
+Click the "Fork" button at the top right corner of the repository page to create your own copy of the repo.
+
+Clone Your Fork:
+
+Clone your forked repository to your local machine:
+
+git clone https://github.com/Alemu2502/reactjs-portfolio.git
+
+cd reactjs-portfolio
+
+Create a New Branch:
+
+Create and switch to a new branch for your changes:
+
+git checkout -b feature-branch
+
+Make Your Changes:
+
+Implement your changes or improvements to the codebase.
+
+Commit and Push:
+
+Commit your changes and push the branch to your GitHub repository:
+
+1. git add .
+2. git commit -m "Describe your changes"
+3. git push origin feature-branch
+4. Open a Pull Request:
+
+Go to the original repository and click the "Compare & pull request" button next to your branch.
+
+Provide a clear description of your changes and submit the pull request.
+
+For more information on setting up WSL 2 with Docker Desktop, see WSL Documentation: check [here](https://docs.microsoft.com/en-us/windows/wsl/)
 
 > Note: Docker only supports Docker Desktop on Windows for those versions of Windows that are still within Microsoft’s servicing timeline. Docker Desktop is not supported on server versions of Windows, such as Windows Server 2019 or Windows Server 2022. For more information on how to run containers on Windows Server, see Microsoft's official documentation.
 
@@ -203,7 +245,7 @@ EmailJS handles the email sending process securely, so you don't need to expose 
 Setup and Integration
 Follow these steps to integrate EmailJS with your contact form:
 
-Create an Account: If you don't have an EmailJS account, sign up here. https://dashboard.emailjs.com/sign-up
+Create an Account: If you don't have an EmailJS account, sign up [here](https://dashboard.emailjs.com/sign-up)
 
 Create a New Email Service:
 
@@ -242,31 +284,6 @@ and add all your social media links here if you prefer
  npm install emailjs-com
 
  Implement the Contact Form:
-
- In your contact form component, import and configure EmailJS:
-
-javascript
-
-import emailjs from 'emailjs-com';
-
-import emailjs from 'emailjs-com';
-
-const sendEmail = (e) => {
-  e.preventDefault();
-
-  emailjs.sendForm('your_service_id', 'your_template_id', e.target, 'your_user_id')
-    .then((result) => {
-      console.log(result.text);
-    }, (error) => {
-      console.log(error.text);
-    });
-};
-
-<form onSubmit={sendEmail}>
-  <!-- Your form fields here -->
-  <input type="submit" value="Send" />
-</form>
-
 
 Testing
 
