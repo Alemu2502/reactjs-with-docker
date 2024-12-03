@@ -26,7 +26,7 @@ This project is a personal portfolio built with React.js, showcasing my skills, 
 
 ### Technologies Used
 
-1. Frontend: React.js, HTML, CSS, bootstrap, JavaScript
+1. Frontend: React.js, HTML, CSS, JavaScript
 2. CI/CD: GitHub Actions
 3. Deployment: Docker
 
