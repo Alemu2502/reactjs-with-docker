@@ -13,11 +13,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Checkout code from the repository
       - name: Checkout code
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
+      # Cache Node modules to speed up build process
       - name: Cache Node modules
         uses: actions/cache@v3
         with:
@@ -26,32 +28,46 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
+      # Set up Node.js environment
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '22'
 
+      # Install dependencies
       - name: Install dependencies
         run: npm ci
 
+      # Build the project
       - name: Build
         run: npm run build
 
+      # Set up Docker Buildx for multi-platform builds
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
 
+      # Install Docker Compose
+      - name: Install Docker Compose
+        run: |
+          sudo curl -L "https://github.com/docker/compose/releases/download/2.1.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+          sudo chmod +x /usr/local/bin/docker-compose
+          docker-compose --version
+
+      # Login to Docker Hub
       - name: Login to Docker Hub
         uses: docker/login-action@v1
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
+      # Build and push Docker image
       - name: Build and push Docker image
         run: |
           docker-compose -f ./docker-compose.yml build
           docker tag my-react-app:latest alemu2502/my-react-app:latest
           docker push alemu2502/my-react-app:latest
 
+      # Deploy to Netlify
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v3.0.0
         with:
