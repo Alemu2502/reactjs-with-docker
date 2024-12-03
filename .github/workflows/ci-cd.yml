@@ -49,8 +49,8 @@ jobs:
       - name: Build and push Docker image
         run: |
           docker-compose -f ./docker-compose.yml build
-          docker tag reactjs-portfolio_frontend:latest username/reactjs-portfolio-frontend:latest
-          docker push username/reactjs-portfolio-frontend:latest
+          docker tag my-react-app:latest alemu2502/my-react-app:latest
+          docker push alemu2502/my-react-app:latest
 
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v3.0.0
