@@ -208,10 +208,13 @@ Set the following environment variables in your project (e.g., in Netlify's Buil
 plaintext
 
  VITE_SERVICE_ID=your_service_id
+
  VITE_TEMPLATE_ID=your_template_id
+
  VITE_USER_ID=your_user_id
 
 and add all your social media links here if you prefer
+
  Install EmailJS in Your Project:
 
  Install the EmailJS SDK:
@@ -223,13 +226,14 @@ and add all your social media links here if you prefer
  In your contact form component, import and configure EmailJS:
 
 javascript
+
 import emailjs from 'emailjs-com';
 
 const sendEmail = (e) => {
   e.preventDefault();
 
   emailjs.sendForm('your_service_id', 'your_template_id', e.target, 'your_user_id')
-    .then((result) => {
+     .then((result) => {
       console.log(result.text);
     }, (error) => {
       console.log(error.text);
