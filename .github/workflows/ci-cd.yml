@@ -1,4 +1,4 @@
-name: Build and Deploy to Netlify
+name: Build and Deploy to Docker Hub
 
 on:
   push:
@@ -66,15 +66,16 @@ jobs:
           docker tag alemu2502/my-react-docker-app:latest alemu2502/my-react-docker-app:latest
           docker push alemu2502/my-react-docker-app:latest
 
-      - name: Deploy to Netlify
-        uses: nwtgck/actions-netlify@v3.0.0
-        with:
-          publish-dir: './dist'
-          production-branch: main
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "Deploy from GitHub Actions"
-          enable-pull-request-comment: false
-          enable-commit-comment: true
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      # Comment out or disable the Netlify deployment step for temporarily
+      # - name: Deploy to Netlify
+      #   uses: nwtgck/actions-netlify@v3.0.0
+      #   with:
+      #     publish-dir: './dist'
+      #     production-branch: main
+      #     github-token: ${{ secrets.GITHUB_TOKEN }}
+      #     deploy-message: "Deploy from GitHub Actions"
+      #     enable-pull-request-comment: false
+      #     enable-commit-comment: true
+      #   env:
+      #     NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+      #     NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
