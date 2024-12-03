@@ -18,11 +18,16 @@ This project is a personal portfolio built with React.js, showcasing my skills, 
 
 ### Features
 
-1. Responsive Design: Adapts to different screen sizes for an optimal viewing experience on any device.
-2. Interactive Project Showcases: Highlight projects with detailed descriptions and visual elements.
-3. Contact Form Integration: Enables visitors to get in touch easily.
-4. Smooth Navigation and Transitions: Provides a seamless user experience.
-5. Automated CI/CD Pipeline: Ensures continuous integration and deployment of updates.
+1. Responsive Design: 
+    Adapts to different screen sizes for an optimal viewing experience on any device.
+2. Interactive Project Showcases:  
+    Highlight projects with detailed descriptions and visual elements.
+3. Contact Form Integration: 
+    Enables visitors to get in touch easily.
+4. Smooth Navigation and Transitions: 
+    Provides a seamless user experience.
+5. Automated CI/CD Pipeline: 
+    Ensures continuous integration and deployment of updates.
 
 ### Technologies Used
 
