@@ -8,6 +8,7 @@ Table of Contents
 7. [Deployment](#deployment) 
 8. [Environment Variables](#environment-variables)
 9. [Docker Setup](#docker-setup) 
+ [Emailjs Integration](#emailjs-integration) 
 10. [Contributing](#contributing)
 11. [License](#license)
 
@@ -27,7 +28,7 @@ This project is a personal portfolio built with React.js, showcasing my skills, 
 
 1. Frontend: React.js, HTML, CSS, bootstrap, JavaScript
 2. CI/CD: GitHub Actions
-3. Deployment: Netlify(so if you haven't create a new one for free here https://app.netlify.com/signup)
+3. Deployment: Netlify(The frontend of this project is deployed using Netlify. If you haven't created a Netlify account yet, you can sign up for free here. https://app.netlify.com/signup)
 
 ### Setup and Installation
 
@@ -39,19 +40,23 @@ Prerequisites
 Clone the repository:
 
 git clone https://github.com/Alemu2502/reactjs-portfolio.git
+
 cd reactjs-portfolio
 
 Install dependencies:
+
 npm install
 
 ### Running the Project
 
 Development Mode
 To run the project in development mode:
+
 npm start
 
 Production Build
 To create a production build: 
+
 npm run build
 
 ### CI/CD Pipeline
@@ -82,13 +87,13 @@ If you prefer, you can use them as public values.
 
 Here are the environment variables used:
 
-VITE_SERVICE_ID
-VITE_TEMPLATE_ID
-VITE_USER_ID
-VITE_GITHUB
-VITE_FACEBOOK
-VITE_LINKEDIN
-VITE_TWITTER
+ VITE_SERVICE_ID
+ VITE_TEMPLATE_ID
+ VITE_USER_ID
+ VITE_GITHUB
+ VITE_FACEBOOK
+ VITE_LINKEDIN
+ VITE_TWITTER
 
 To set these variables in Netlify, you can navigate to the site's settings and add them under the "Build & Deploy" section.
 
@@ -120,16 +125,21 @@ Installing Docker Desktop
 
 Follow the installation instructions for your operating system.
 
-Check Docker Version: Open your Command Prompt or PowerShell and run:
+Check Docker Version: 
+Open your Command Prompt or PowerShell and run:
+
 docker --version
 
 Enabling WSL 2 (Windows Users)
-Enable Windows Subsystem for Linux: Open PowerShell as Administrator and run:
+Enable Windows Subsystem for Linux: 
+Open PowerShell as Administrator and run:
+
 wsl --install
 sudo apt-get update
 sudo apt-get upgrade
 
 Enable Virtual Machine Platform:
+
 Still in PowerShell, run:
 
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
@@ -140,6 +150,7 @@ sudo apt-get install docker.io
 
 Add User to Docker Group (optional):
 If you want to run Docker commands without sudo, add your user to the Docker group:
+
 sudo usermod -aG docker $USER
 
 For more information on setting up WSL 2 with Docker Desktop, see WSL Documentation: https://docs.microsoft.com/en-us/windows/wsl/
@@ -148,6 +159,85 @@ For more information on setting up WSL 2 with Docker Desktop, see WSL Documentat
 
 > Important: To run Windows containers, you need Windows 10 or Windows 11 Professional or Enterprise edition. Windows Home or Education editions only allow you to run Linux containers.
 
+### Emailjs Integration
+
+EmailJS Integration
+Overview
+This project utilizes EmailJS to handle the contact form submissions. EmailJS allows you to send emails directly from your JavaScript code without needing a server.
+
+Why EmailJS?
+No Server Required: EmailJS provides a serverless solution to send emails from your client-side application.
+
+Easy Setup: With minimal configuration, you can integrate EmailJS and start sending emails.
+
+Secure: EmailJS handles the email sending process securely, so you don't need to expose your SMTP credentials.
+
+Setup and Integration
+Follow these steps to integrate EmailJS with your contact form:
+
+Create an Account: If you don't have an EmailJS account, sign up here.
+
+Create a New Email Service:
+
+After logging in, go to the Email Services section and create a new email service.
+
+Add your email provider (e.g., Gmail, Outlook) and connect it.
+
+Create an Email Template:
+
+Navigate to the Email Templates section and create a new template.
+
+Define the template parameters and structure (e.g., subject, body).
+
+Get Your User ID, Service ID, and Template ID:
+
+Go to the Integration section and copy your User ID.
+
+Note down your Service ID and Template ID from the Email Services and Templates sections, respectively.
+
+Add Environment Variables:
+
+Set the following environment variables in your project (e.g., in Netlify's Build & Deploy settings):
+
+plaintext
+VITE_SERVICE_ID=your_service_id
+VITE_TEMPLATE_ID=your_template_id
+VITE_USER_ID=your_user_id
+
+and add all your social media links here if you prefer
+Install EmailJS in Your Project:
+
+Install the EmailJS SDK:
+
+npm install emailjs-com
+
+Implement the Contact Form:
+
+In your contact form component, import and configure EmailJS:
+
+javascript
+import emailjs from 'emailjs-com';
+
+const sendEmail = (e) => {
+  e.preventDefault();
+
+  emailjs.sendForm('your_service_id', 'your_template_id', e.target, 'your_user_id')
+    .then((result) => {
+      console.log(result.text);
+    }, (error) => {
+      console.log(error.text);
+    });
+};
+
+<form onSubmit={sendEmail}>
+  <!-- Your form fields here -->
+  <input type="submit" value="Send" />
+</form>
+Testing
+Local Testing: Run your project locally and test the contact form to ensure it sends emails correctly.
+
+Deployed Testing: 
+After deploying your project (e.g., on Netlify), test the contact form again to ensure it works in the live environment.
 ### Contributing
 
 Feel free to contribute to this project by creating a pull request or opening an issue.
