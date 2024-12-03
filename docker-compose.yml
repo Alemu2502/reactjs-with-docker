@@ -7,10 +7,10 @@ services:
     ports:
       - "8080:80"
     environment:
-      - YOUR_SERVICE_ID=${VITE_SERVICE_ID}
-      - YOUR_TEMPLATE_ID=${VITE_TEMPLATE_ID}
-      - YOUR_USER_ID=${VITE_USER_ID}
-      - github=${VITE_GITHUB}
-      - facebook=${VITE_FACEBOOK}
-      - linkedin=${VITE_LINKEDIN}
-      - twitter=${VITE_TWITTER}
+      - VITE_SERVICE_ID=${VITE_SERVICE_ID}
+      - VITE_TEMPLATE_ID=${VITE_TEMPLATE_ID}
+      - VITE_USER_ID=${VITE_USER_ID}
+      - VITE_GITHUB=${VITE_GITHUB}
+      - VITE_FACEBOOK=${VITE_FACEBOOK}
+      - VITE_LINKEDIN=${VITE_LINKEDIN}
+      - VITE_TWITTER=${VITE_TWITTER}
