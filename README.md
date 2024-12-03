@@ -28,7 +28,7 @@ This project is a personal portfolio built with React.js, showcasing my skills, 
 
 1. Frontend: React.js, HTML, CSS, bootstrap, JavaScript
 2. CI/CD: GitHub Actions
-3. Deployment: Netlify(The frontend of this project is deployed using Netlify. If you haven't created a Netlify account yet, you can sign up for free here. https://app.netlify.com/signup)
+3. Deployment: Docker
 
 ### Setup and Installation
 
@@ -71,15 +71,15 @@ This project uses GitHub Actions for continuous integration and deployment.
 4. Installing dependencies
 5. Running tests (commented out for now)
 6. Building the project
-7. Deploying to Netlify
+7. Deploying to Docker
 
 ### Deployment
 
-The frontend is deployed using Netlify. The deployment configuration is handled in the GitHub Actions workflow.
+The frontend is deployed using Docker. The deployment configuration is handled in the GitHub Actions workflow.
 
 ### Environment Variables
 
-Frontend (set in Netlify): In this project, i utilize several environment variables to 
+Frontend (set in Github Secrets): In this project, i utilize several environment variables to 
 maintain consistency and manage configurations. These variables include both essential 
 service identifiers and social media links. While the social media links are stored in 
 the environment file for consistency, they are intended to be publicly accessible. 
@@ -95,7 +95,7 @@ Here are the environment variables used:
  6. VITE_LINKEDIN
  7. VITE_TWITTER
 
-To set these variables in Netlify, you can navigate to the site's settings and add them under the "Build & Deploy" section.
+To set these variables in GitHub Secrets, you can navigate to your repository's settings and add them under the "Secrets and variables" section.
 
 ### Docker Setup
 
@@ -227,11 +227,13 @@ javascript
 
 import emailjs from 'emailjs-com';
 
+import emailjs from 'emailjs-com';
+
 const sendEmail = (e) => {
   e.preventDefault();
 
   emailjs.sendForm('your_service_id', 'your_template_id', e.target, 'your_user_id')
-     .then((result) => {
+    .then((result) => {
       console.log(result.text);
     }, (error) => {
       console.log(error.text);
@@ -243,6 +245,7 @@ const sendEmail = (e) => {
   <input type="submit" value="Send" />
 </form>
 
+
 Testing
 
 Local Testing: 
@@ -250,7 +253,7 @@ Run your project locally and test the contact form to ensure it sends emails cor
 
 Deployed Testing: 
 
-After deploying your project (e.g., on Netlify), test the contact form again to ensure it works in the live environment.
+After deploying your project (e.g., on Docker hub), test the contact form again to ensure it works in the live environment.
 
 ### Contributing
 
