@@ -8,9 +8,9 @@ Table of Contents
 7. [Deployment](#deployment) 
 8. [Environment Variables](#environment-variables)
 9. [Docker Setup](#docker-setup) 
- [Emailjs Integration](#emailjs-integration) 
-10. [Contributing](#contributing)
-11. [License](#license)
+10. [Emailjs Integration](#emailjs-integration) 
+11. [Contributing](#contributing)
+12. [License](#license)
 
 ### Overview
 
@@ -162,20 +162,26 @@ For more information on setting up WSL 2 with Docker Desktop, see WSL Documentat
 ### Emailjs Integration
 
 EmailJS Integration
+
 Overview
+
 This project utilizes EmailJS to handle the contact form submissions. EmailJS allows you to send emails directly from your JavaScript code without needing a server.
 
 Why EmailJS?
-No Server Required: EmailJS provides a serverless solution to send emails from your client-side application.
 
-Easy Setup: With minimal configuration, you can integrate EmailJS and start sending emails.
+No Server Required: 
+EmailJS provides a serverless solution to send emails from your client-side application.
 
-Secure: EmailJS handles the email sending process securely, so you don't need to expose your SMTP credentials.
+Easy Setup:
+ With minimal configuration, you can integrate EmailJS and start sending emails.
+
+Secure: 
+EmailJS handles the email sending process securely, so you don't need to expose your SMTP credentials.
 
 Setup and Integration
 Follow these steps to integrate EmailJS with your contact form:
 
-Create an Account: If you don't have an EmailJS account, sign up here.
+Create an Account: If you don't have an EmailJS account, sign up here. https://dashboard.emailjs.com/sign-up
 
 Create a New Email Service:
 
@@ -189,7 +195,7 @@ Navigate to the Email Templates section and create a new template.
 
 Define the template parameters and structure (e.g., subject, body).
 
-Get Your User ID, Service ID, and Template ID:
+Get Your User ID(public key), Service ID, and Template ID:
 
 Go to the Integration section and copy your User ID.
 
@@ -233,11 +239,16 @@ const sendEmail = (e) => {
   <!-- Your form fields here -->
   <input type="submit" value="Send" />
 </form>
+
 Testing
-Local Testing: Run your project locally and test the contact form to ensure it sends emails correctly.
+
+Local Testing: 
+Run your project locally and test the contact form to ensure it sends emails correctly.
 
 Deployed Testing: 
+
 After deploying your project (e.g., on Netlify), test the contact form again to ensure it works in the live environment.
+
 ### Contributing
 
 Feel free to contribute to this project by creating a pull request or opening an issue.
