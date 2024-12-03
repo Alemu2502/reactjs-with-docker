@@ -97,7 +97,7 @@ Here are the environment variables used:
  8. DOCKER_USERNAME 
  9. DOCKER_PASSWORD 
 
- so by creating your docker hub account here you can deploy  the docker images to docker hub automatically whenever you push the code to your repo as i used ci/cd pipe lines
+ so by creating your docker hub account [here](https://hub.docker.com/signup) you can deploy  the docker images to docker hub automatically whenever you push the code to your repo as i used ci/cd pipe lines
   using your docker hub user name and password by stored them in github secrets and you should replace my docker user name alemu2502 to your docker user name in .github/workflows/ci-cd pipelines 
 
 To set these variables in GitHub Secrets, you can navigate to your repository's settings and add them under the "Secrets and variables" section.
@@ -265,17 +265,7 @@ Go to the Integration section and copy your User ID.
 
 Note down your Service ID and Template ID from the Email Services and Templates sections, respectively.
 
-Add Environment Variables:
-
-Set the following environment variables in your project (e.g., in Netlify's Build & Deploy settings):
-
-plaintext
-
- 1. VITE_SERVICE_ID=your_service_id
- 2. VITE_TEMPLATE_ID=your_template_id
- 3. VITE_USER_ID=your_user_id
-
-and add all your social media links here if you prefer
+so after that Add these Environment Variables to github secrets.
 
  Install EmailJS in Your Project:
 
