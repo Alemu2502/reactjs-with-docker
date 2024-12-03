@@ -18,16 +18,11 @@ This project is a personal portfolio built with React.js, showcasing my skills, 
 
 ### Features
 
-1. Responsive Design: 
-    Adapts to different screen sizes for an optimal viewing experience on any device.
-2. Interactive Project Showcases:  
-    Highlight projects with detailed descriptions and visual elements.
-3. Contact Form Integration: 
-    Enables visitors to get in touch easily.
-4. Smooth Navigation and Transitions: 
-    Provides a seamless user experience.
-5. Automated CI/CD Pipeline: 
-    Ensures continuous integration and deployment of updates.
+1. Responsive Design: Adapts to different screen sizes for an optimal viewing experience on any device.
+2. Interactive Project Showcases: Highlight projects with detailed descriptions and visual elements.
+3. Contact Form Integration: Enables visitors to get in touch easily.
+4. Smooth Navigation and Transitions: Provides a seamless user experience.
+5. Automated CI/CD Pipeline: Ensures continuous integration and deployment of updates.
 
 ### Technologies Used
 
@@ -212,11 +207,9 @@ Set the following environment variables in your project (e.g., in Netlify's Buil
 
 plaintext
 
- VITE_SERVICE_ID=your_service_id
-
- VITE_TEMPLATE_ID=your_template_id
-
- VITE_USER_ID=your_user_id
+ 1. VITE_SERVICE_ID=your_service_id
+ 2. VITE_TEMPLATE_ID=your_template_id
+ 3. VITE_USER_ID=your_user_id
 
 and add all your social media links here if you prefer
 
