@@ -14,3 +14,5 @@ services:
       - VITE_FACEBOOK=${VITE_FACEBOOK}
       - VITE_LINKEDIN=${VITE_LINKEDIN}
       - VITE_TWITTER=${VITE_TWITTER}
+    ports:
+      - "80:80"

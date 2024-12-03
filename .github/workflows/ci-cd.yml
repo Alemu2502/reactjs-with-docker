@@ -1,4 +1,4 @@
-name: Build and Deploy to Docker Hub
+name: Build and Deploy to Render
 
 on:
   push:
@@ -40,12 +40,6 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
 
-      - name: Install Docker Compose
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y docker-compose
-          docker-compose --version
-
       - name: Login to Docker Hub
         uses: docker/login-action@v1
         with:
@@ -66,16 +60,9 @@ jobs:
           docker tag alemu2502/my-react-docker-app:latest alemu2502/my-react-docker-app:latest
           docker push alemu2502/my-react-docker-app:latest
 
-      # Comment out or disable the Netlify deployment step for temporarily
-      # - name: Deploy to Netlify
-      #   uses: nwtgck/actions-netlify@v3.0.0
-      #   with:
-      #     publish-dir: './dist'
-      #     production-branch: main
-      #     github-token: ${{ secrets.GITHUB_TOKEN }}
-      #     deploy-message: "Deploy from GitHub Actions"
-      #     enable-pull-request-comment: false
-      #     enable-commit-comment: true
-      #   env:
-      #     NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-      #     NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      - name: Deploy to Render
+        run: |
+          curl -X POST https://api.render.com/deploy/github \
+          -H "Accept: application/json" \
+          -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}" \
+          -d '{"serviceId": "your-render-service-id", "clearCache": false}'
