@@ -206,20 +206,21 @@ Add Environment Variables:
 Set the following environment variables in your project (e.g., in Netlify's Build & Deploy settings):
 
 plaintext
-VITE_SERVICE_ID=your_service_id
-VITE_TEMPLATE_ID=your_template_id
-VITE_USER_ID=your_user_id
+
+ VITE_SERVICE_ID=your_service_id
+ VITE_TEMPLATE_ID=your_template_id
+ VITE_USER_ID=your_user_id
 
 and add all your social media links here if you prefer
-Install EmailJS in Your Project:
+ Install EmailJS in Your Project:
 
-Install the EmailJS SDK:
+ Install the EmailJS SDK:
 
-npm install emailjs-com
+ npm install emailjs-com
 
-Implement the Contact Form:
+ Implement the Contact Form:
 
-In your contact form component, import and configure EmailJS:
+ In your contact form component, import and configure EmailJS:
 
 javascript
 import emailjs from 'emailjs-com';
