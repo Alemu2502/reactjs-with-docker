@@ -62,6 +62,14 @@ jobs:
 
       # Build and push Docker image
       - name: Build and push Docker image
+        env:
+          VITE_SERVICE_ID: ${{ secrets.VITE_SERVICE_ID }}
+          VITE_TEMPLATE_ID: ${{ secrets.VITE_TEMPLATE_ID }}
+          VITE_USER_ID: ${{ secrets.VITE_USER_ID }}
+          VITE_GITHUB: ${{ secrets.VITE_GITHUB }}
+          VITE_FACEBOOK: ${{ secrets.VITE_FACEBOOK }}
+          VITE_LINKEDIN: ${{ secrets.VITE_LINKEDIN }}
+          VITE_TWITTER: ${{ secrets.VITE_TWITTER }}
         run: |
           docker-compose -f ./docker-compose.yml build
           docker tag my-react-app:latest alemu2502/my-react-app:latest
