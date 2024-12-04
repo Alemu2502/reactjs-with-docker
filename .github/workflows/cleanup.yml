@@ -2,7 +2,7 @@ name: Clean-Up Old Workflows
 
 on:
   schedule:
-    - cron: '47 02 * * *'  # Runs at 5:16 AM Ethiopia local time (UTC+3)
+    - cron: '16 03 * * *'  # Runs at 5:16 AM Ethiopia local time (UTC+3)
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
