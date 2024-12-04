@@ -9,7 +9,7 @@
 8. [Environment Variables](#environment-variables)
 9. [Docker Setup](#docker-setup) 
 10. [Emailjs Integration](#emailjs-integration) 
-11. [Clean-Up Policy](#clean-up-policy)
+11. [Clean-Up Old Workflows](#clean-up-old-workflows)
 12. [Contributing](#contributing)
 13. [Contact](#contact)
 14. [License](#license)
@@ -278,15 +278,38 @@ Deployed Testing:
 
 After deploying your project (e.g., on Docker hub), test the contact form again to ensure it works in the live environment.
 
-## Clean-Up Policy 
+## Clean-Up Old Workflows 
 
 To maintain a clean and manageable CI/CD history, i implement a periodic clean-up process. This process involves: 
 1. Scheduled Clean-Up:
- Every quarter, old workflows that have been resolved and documented are deleted. This helps keep the workflow history clean and efficient. 
+ Every moth, old workflows that have been resolved and documented are deleted. This helps keep the workflow history clean and efficient. 
  2. Automated Clean-Up: 
- i use a GitHub Actions workflow to automate the clean-up process. The workflow runs every quarter and deletes old workflows. The clean-up workflow can be found [here](.github/workflows/cleanup.yml). 
+ I use a GitHub Actions workflow to automate the clean-up process. The workflow runs every moth and deletes old workflows. The clean-up workflow can be found [here](.github/workflows/cleanup.yml). 
  3. Archiving: 
  Significant issues and their resolutions are documented and archived before deletion. By following these best practices, we ensure that our CI/CD pipeline remains efficient and clutter-free. If you have any suggestions or improvements, feel free to open a pull request or contact me. 
+
+but fisrt you should Checking and Updating GitHub Token Permissions
+To ensure your GitHub Actions workflow can run correctly, follow these steps to check and update the GITHUB_TOKEN permissions:
+
+Steps to Check and Update GITHUB_TOKEN Permissions:
+
+Navigate to Your Repository Settings:
+
+1. Go to your GitHub repository.
+2. Click on the "Settings" tab.
+3. Access Actions Settings:
+
+In the left sidebar, scroll down to find and click on "Actions".
+
+1. General Settings:
+2. Under the "Actions" section, click on "General".
+
+Update Workflow Permissions:
+
+Look for the "Workflow permissions" section.
+
+Ensure that the "Read and write permissions" option is selected. This setting allows the GITHUB_TOKEN to perform read and write operations, such as deleting workflow runs.
+
 ### Contributing
 
 Feel free to contribute to this project by creating a pull request or opening an issue.
