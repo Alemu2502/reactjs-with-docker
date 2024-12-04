@@ -282,7 +282,7 @@ After deploying your project (e.g., on Docker hub), test the contact form again 
 
 Feel free to contribute to this project by creating a pull request or opening an issue.
 
-Contact
+### Contact
 For any questions, suggestions, or collaboration opportunities, feel free to connect with me through the following channels:
 
 Email: alemu4617@gmail.com
