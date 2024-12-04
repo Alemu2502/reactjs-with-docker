@@ -2,7 +2,7 @@ name: Clean-Up Old Workflows
 
 on:
   schedule:
-    - cron: '15 02 * * *'  # Runs at 5:16 AM Ethiopia local time (UTC+3)
+    - cron: '22 02 * * *'  # Runs at 5:16 AM Ethiopia local time (UTC+3)
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
@@ -20,6 +20,6 @@ jobs:
 
       - name: Clean up old workflow runs
         run: |
-          gh run list --limit 1000 --json databaseId,status,workflowName,createdAt | jq -c '.[] | select(.workflowName | contains("Build and Deploy to Render")) | select(.status == "completed") | .databaseId' | xargs -I {} gh run delete {}
+          gh run list --limit 1000 --json databaseId,status,workflowName,workflow_id,createdAt | jq -c '.[] | select(.status == "completed") | .databaseId' | xargs -I {} gh run delete --run-id {}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
