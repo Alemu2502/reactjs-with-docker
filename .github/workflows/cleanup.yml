@@ -2,7 +2,7 @@ name: Clean-Up Old Workflows
 
 on:
   schedule:
-    - cron: '31 02 * * *'  # Runs at 5:16 AM Ethiopia local time (UTC+3)
+    - cron: '36 02 * * *'  # Runs at 5:16 AM Ethiopia local time (UTC+3)
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
@@ -23,9 +23,9 @@ jobs:
 
       - name: Clean up old workflow runs
         run: |
-          gh run list --repo <your-username>/<your-repo> --limit 1000 --json databaseId,status,workflowName,createdAt | jq -c '.[] | select(.status == "completed") | .databaseId' | while read -r run_id; do
+          gh run list --repo Alemu2502/reactjs-with-docker --limit 1000 --json databaseId,status,workflowName,createdAt | jq -c '.[] | select(.status == "completed") | .databaseId' | while read -r run_id; do
             echo "Deleting workflow run ID: $run_id"
-            gh run delete --repo <your-username>/<your-repo> $run_id --confirm
+            gh run delete --repo Alemu2502/reactjs-with-docker $run_id --confirm
           done
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
