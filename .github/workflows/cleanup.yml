@@ -13,7 +13,7 @@ jobs:
       - name: Set up GitHub CLI
         uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '22'
 
       - name: Clean up old workflow runs
         run: |
