@@ -151,7 +151,6 @@ Enable Virtual Machine Platform:
 Still in PowerShell, run:
 
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
-Install Docker in WSL:
 
 After setting up WSL, install Docker:
 
