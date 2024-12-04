@@ -288,7 +288,7 @@ To maintain a clean and manageable CI/CD history, i implement a periodic clean-u
 #### 1. Scheduled Clean-Up:
  Every month, old workflows that have been resolved and documented are deleted. This helps keep the workflow history clean and efficient. 
  #### 2. Automated Clean-Up: 
- I use a GitHub Actions workflow to automate the clean-up process. The workflow runs every month and deletes old workflows. The clean-up workflow can be found [here](.github/workflows/cleanup.yml). 
+ I use a GitHub Actions workflow to automate the clean-up process. The workflow runs every month and deletes old workflows. The clean-up workflow found [here](.github/workflows/cleanup.yml). 
  #### 3. Archiving: 
  Significant issues and their resolutions are documented and archived before deletion. By following these best practices, we ensure that our CI/CD pipeline remains efficient and clutter-free. If you have any suggestions or improvements, feel free to open a pull request or contact me. 
 
