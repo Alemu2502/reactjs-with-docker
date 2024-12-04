@@ -2,7 +2,7 @@ name: Clean-Up Old Workflows
 
 on:
   schedule:
-    - cron: '50 13 * * *'  # Runs at 4:50 PM Ethiopia local time
+    - cron: '00 02 * * *'  # Runs at 5:00 AM Ethiopia local time (UTC+3)
 
 jobs:
   cleanup:
