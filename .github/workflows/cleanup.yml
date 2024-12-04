@@ -2,7 +2,7 @@ name: Clean-Up Old Workflows
 
 on:
   schedule:
-    - cron: '29 02 * * *'  # Runs at 5:16 AM Ethiopia local time (UTC+3)
+    - cron: '31 02 * * *'  # Runs at 5:16 AM Ethiopia local time (UTC+3)
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
@@ -16,13 +16,16 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '22'
+
+      - name: Set up the repository
+        uses: actions/checkout@v2
 
       - name: Clean up old workflow runs
         run: |
-          gh run list --limit 1000 --json databaseId,status,workflowName,createdAt | jq -c '.[] | select(.status == "completed") | .databaseId' | while read -r run_id; do
+          gh run list --repo <your-username>/<your-repo> --limit 1000 --json databaseId,status,workflowName,createdAt | jq -c '.[] | select(.status == "completed") | .databaseId' | while read -r run_id; do
             echo "Deleting workflow run ID: $run_id"
-            gh run delete $run_id --confirm
+            gh run delete --repo <your-username>/<your-repo> $run_id --confirm
           done
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
