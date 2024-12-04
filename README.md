@@ -15,25 +15,30 @@
 14. [License](#license)
 15. [Conclusion](#conclusion)
 
-### Overview
+# Overview
 
 This project is a personal portfolio built with React.js, showcasing my skills, projects, and experience. The portfolio features a CI/CD pipeline for seamless deployment and updates.
 
-### Features
+# Features
 
-1. Responsive Design: Adapts to different screen sizes for an optimal viewing experience on any device.
-2. Interactive Project Showcases: Highlight projects with detailed descriptions and visual elements.
-3. Contact Form Integration: Enables visitors to get in touch easily.
-4. Smooth Navigation and Transitions: Provides a seamless user experience.
-5. Automated CI/CD Pipeline: Ensures continuous integration and deployment of updates.
+#### 1. Responsive Design:
+ Adapts to different screen sizes for an optimal viewing experience on any device.
+#### 2. Interactive Project Showcases: 
+Highlight projects with detailed descriptions and visual elements.
+#### 3. Contact Form Integration:
+ Enables visitors to get in touch easily.
+#### 4. Smooth Navigation and Transitions: 
+Provides a seamless user experience.
+#### 5. Automated CI/CD Pipeline: 
+Ensures continuous integration and deployment of updates.
 
-### Technologies Used
+# Technologies Used
 
-1. Frontend: React.js, HTML, CSS, JavaScript
+1. Frontend: React.js, HTML, CSS, JavaScript, Vite
 2. CI/CD: GitHub Actions
 3. Deployment: Docker
 
-### Setup and Installation
+# Setup and Installation
 
 Prerequisites
 1. Node.js and npm installed
@@ -50,23 +55,23 @@ Install dependencies:
 
    npm install
 
-### Running the Project
+# Running the Project
 
-Development Mode
+#### Development Mode
   To run the project in development mode:
 
   npm start
 
-  Production Build
+  #### Production Build
   To create a production build: 
 
    npm run build
 
-### CI/CD Pipeline
+# CI/CD Pipeline
 
 This project uses GitHub Actions for continuous integration and deployment.
 
- # The CI/CD pipeline includes steps for:
+ #### The CI/CD pipeline includes steps for:
 
 1. Checking out the code
 2. Caching Node modules
@@ -76,11 +81,11 @@ This project uses GitHub Actions for continuous integration and deployment.
 6. Building the project
 7. Deploying to Docker
 
-### Deployment
+# Deployment
 
 The frontend is deployed using Docker. The deployment configuration is handled in the GitHub Actions workflow.
 
-### Environment Variables
+# Environment Variables
 
 Frontend (set in Github Secrets): In this project, i utilize several environment variables to 
 maintain consistency and manage configurations. These variables include both essential 
@@ -88,7 +93,7 @@ service identifiers and social media links. While the social media links are sto
 the environment file for consistency, they are intended to be publicly accessible. 
 If you prefer, you can use them as public values.
 
-Here are the environment variables used:
+#### Here are the environment variables used:
 
  1. VITE_SERVICE_ID
  2. VITE_TEMPLATE_ID
@@ -105,9 +110,9 @@ Here are the environment variables used:
 
 To set these variables in GitHub Secrets, you can navigate to your repository's settings and add them under the "Secrets and variables" section.
 
-### Docker Setup
+# Docker Setup
 
-Prerequisites
+#### Prerequisites
 
 To use Docker, ensure you meet the following prerequisites:
 
@@ -164,11 +169,11 @@ sudo usermod -aG docker $USER
 
 By creating your Docker Hub account [here](https://hub.docker.com/signup), you can set up automated deployment of Docker images to Docker Hub whenever you push code to your GitHub repository. This process leverages CI/CD pipelines using your Docker Hub username and password stored in GitHub Secrets. Follow these steps:
 
-Create a Docker Hub Account:
+#### Create a Docker Hub Account:
 
 Sign up for a Docker Hub account [here](https://hub.docker.com/signup).
 
-Set Up GitHub Secrets:
+#### Set Up GitHub Secrets:
 
 Navigate to your GitHub repository.
 
@@ -180,7 +185,7 @@ DOCKER_HUB_USERNAME: Your Docker Hub username.
 
 DOCKER_PASSWORD Your Docker Hub password 
 
-Contributing:
+#### Contributing:
 
 Since the Docker image is public, you can contribute to the project by opening pull requests (PRs). Here’s how you can do it:
 
@@ -225,37 +230,36 @@ For more information on setting up WSL 2 with Docker Desktop, see WSL Documentat
 
 > Important: To run Windows containers, you need Windows 10 or Windows 11 Professional or Enterprise edition. Windows Home or Education editions only allow you to run Linux containers.
 
-### Emailjs Integration
+# Emailjs Integration
 
-EmailJS Integration
-
-Overview
+#### Overview
 
 This project utilizes EmailJS to handle the contact form submissions. EmailJS allows you to send emails directly from your JavaScript code without needing a server.
 
-Why EmailJS?
+### Why EmailJS?
 
-No Server Required: 
+#### No Server Required: 
 EmailJS provides a serverless solution to send emails from your client-side application.
 
-Easy Setup:
+#### Easy Setup:
  With minimal configuration, you can integrate EmailJS and start sending emails.
 
-Secure: 
+#### Secure: 
 EmailJS handles the email sending process securely, so you don't need to expose your SMTP credentials.
 
-Setup and Integration
+#### Setup and Integration
 Follow these steps to integrate EmailJS with your contact form:
 
-Create an Account: If you don't have an EmailJS account, sign up [here](https://dashboard.emailjs.com/sign-up)
+#### Create an Account: 
+If you don't have an EmailJS account, sign up [here](https://dashboard.emailjs.com/sign-up)
 
-Create a New Email Service:
+#### Create a New Email Service:
 
 After logging in, go to the Email Services section and create a new email service.
 
 Add your email provider (e.g., Gmail, Outlook) and connect it.
 
-Create an Email Template:
+#### Create an Email Template:
  
 Navigate to the Email Templates section and create a new template.
 
@@ -269,23 +273,23 @@ Note down your Service ID and Template ID from the Email Services and Templates 
 
 so after that Add these Environment Variables to github secrets.
 
-Testing
+#### Testing
 
 Local Testing: 
 Run your project locally and test the contact form to ensure it sends emails correctly.
 
-Deployed Testing: 
+##### Deployed Testing: 
 
 After deploying your project (e.g., on Docker hub), test the contact form again to ensure it works in the live environment.
 
-## Clean-Up Old Workflows 
+# Clean-Up Old Workflows 
 
 To maintain a clean and manageable CI/CD history, i implement a periodic clean-up process. This process involves: 
-1. Scheduled Clean-Up:
- Every moth, old workflows that have been resolved and documented are deleted. This helps keep the workflow history clean and efficient. 
- 2. Automated Clean-Up: 
- I use a GitHub Actions workflow to automate the clean-up process. The workflow runs every moth and deletes old workflows. The clean-up workflow can be found [here](.github/workflows/cleanup.yml). 
- 3. Archiving: 
+#### 1. Scheduled Clean-Up:
+ Every month, old workflows that have been resolved and documented are deleted. This helps keep the workflow history clean and efficient. 
+ #### 2. Automated Clean-Up: 
+ I use a GitHub Actions workflow to automate the clean-up process. The workflow runs every month and deletes old workflows. The clean-up workflow can be found [here](.github/workflows/cleanup.yml). 
+ #### 3. Archiving: 
  Significant issues and their resolutions are documented and archived before deletion. By following these best practices, we ensure that our CI/CD pipeline remains efficient and clutter-free. If you have any suggestions or improvements, feel free to open a pull request or contact me. 
 
 but fisrt you should Checking and Updating GitHub Token Permissions
@@ -304,17 +308,19 @@ In the left sidebar, scroll down to find and click on "Actions".
 1. General Settings:
 2. Under the "Actions" section, click on "General".
 
-Update Workflow Permissions:
+##### Update Workflow Permissions:
 
 Look for the "Workflow permissions" section.
 
 Ensure that the "Read and write permissions" option is selected. This setting allows the GITHUB_TOKEN to perform read and write operations, such as deleting workflow runs.
 
-### Contributing
+You should replace my GitHub username and repository with yours in .github/workflows/cleanup.yml.
+
+# Contributing
 
 Feel free to contribute to this project by creating a pull request or opening an issue.
 
-### Contact
+# Contact
 For any questions, suggestions, or collaboration opportunities, feel free to connect with me through the following channels:
 
 Email: alemu4617@gmail.com
@@ -330,11 +336,11 @@ Facebook: https://www.facebook.com/alemu.molla.1806
 Twitter: https://twitter.com/ALEXSEPPRO
   - Follow me for updates and insights.
 
-### License
+# License
 
- MIT License
+ #### MIT License
 
-Copyright (c) 2024 Alemu2502
+##### Copyright (c) 2024 Alemu2502
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this
  software and associated documentation files (the "Software"), to deal in the Software 
@@ -352,7 +358,7 @@ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFT
 THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
-### Conclusion
+# Conclusion
 
 Thank you for exploring my React.jsPortfolio project! This project showcases my skills and experience with modern web development technologies, including React.js, Docker, and CI/CD pipelines. By providing a clear structure and comprehensive documentation, I aim to make it easy for others to understand, use, and contribute to the project.
 
