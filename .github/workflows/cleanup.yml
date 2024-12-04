@@ -1,0 +1,22 @@
+name: Clean-Up Old Workflows
+
+on:
+  schedule:
+    - cron: '50 13 * * *'  # Runs at 4:50 PM Ethiopia local time
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up GitHub CLI
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      - name: Clean up old workflow runs
+        run: |
+          gh auth login --with-token <<< ${{ secrets.GITHUB_TOKEN }}
+          gh run list --limit 1000 --json databaseId,status,workflowName,createdAt | jq -c '.[] | select(.workflowName | contains("Build and Deploy to Render")) | select(.status == "completed") | .databaseId' | xargs -I {} gh run delete {}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

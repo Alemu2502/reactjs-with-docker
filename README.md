@@ -9,10 +9,11 @@
 8. [Environment Variables](#environment-variables)
 9. [Docker Setup](#docker-setup) 
 10. [Emailjs Integration](#emailjs-integration) 
-11. [Contributing](#contributing)
-12. [Contact](#contact)
-13. [License](#license)
-14. [Conclusion](#conclusion)
+11. [Clean-Up Policy](#clean-up-policy)
+12. [Contributing](#contributing)
+13. [Contact](#contact)
+14. [License](#license)
+15. [Conclusion](#conclusion)
 
 ### Overview
 
@@ -277,6 +278,15 @@ Deployed Testing:
 
 After deploying your project (e.g., on Docker hub), test the contact form again to ensure it works in the live environment.
 
+## Clean-Up Policy 
+
+To maintain a clean and manageable CI/CD history, i implement a periodic clean-up process. This process involves: 
+1. Scheduled Clean-Up:
+ Every quarter, old workflows that have been resolved and documented are deleted. This helps keep the workflow history clean and efficient. 
+ 2. Automated Clean-Up: 
+ i use a GitHub Actions workflow to automate the clean-up process. The workflow runs every quarter and deletes old workflows. The clean-up workflow can be found [here](.github/workflows/cleanup.yml). 
+ 3. Archiving: 
+ Significant issues and their resolutions are documented and archived before deletion. By following these best practices, we ensure that our CI/CD pipeline remains efficient and clutter-free. If you have any suggestions or improvements, feel free to open a pull request or contact me. 
 ### Contributing
 
 Feel free to contribute to this project by creating a pull request or opening an issue.
@@ -286,7 +296,7 @@ For any questions, suggestions, or collaboration opportunities, feel free to con
 
 Email: alemu4617@gmail.com
 
-Portfolio: https://alemumolla-portfolio.netlify.app/  - Explore my projects and learn more about my work.
+Portfolio: https://my-react-app-o8w4.onrender.com/  - Explore my projects and learn more about my work.
 
 Docker Hub: https://hub.docker.com/repository/docker/alemu2502/my-react-docker-app - Access the Docker images for this project.
 
