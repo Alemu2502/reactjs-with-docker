@@ -287,14 +287,14 @@ For any questions, suggestions, or collaboration opportunities, feel free to con
 
 Email: alemu4617@gmail.com
 
-LinkedIn:
-
 Portfolio: https://alemumolla-portfolio.netlify.app/  - Explore my projects and learn more about my work.
 
 Docker Hub: https://hub.docker.com/repository/docker/alemu2502/my-react-docker-app - Access the Docker images for this project.
 
 LinkedIn:   https://www.linkedin.com/in/Alemu2502 - Connect with me professionally.
-Facebook: https://www.facebook.com/alemu.molla.1806 - 
+
+Facebook: https://www.facebook.com/alemu.molla.1806 
+
 Twitter: https://twitter.com/ALEXSEPPRO
   - Follow me for updates and insights.
 
