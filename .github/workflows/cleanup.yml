@@ -2,12 +2,12 @@ name: Clean-Up Old Workflows
 
 on:
   schedule:
-    - cron: '45 02 * * *'  # Runs at 5:16 AM Ethiopia local time (UTC+3)
+    - cron: '47 02 * * *'  # Runs at 5:16 AM Ethiopia local time (UTC+3)
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
   cleanup:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
 
     steps:
       - name: Install GitHub CLI
@@ -20,6 +20,13 @@ jobs:
 
       - name: Set up the repository
         uses: actions/checkout@v2
+
+      - name: Check Token Permissions
+        run: |
+          echo "Checking GITHUB_TOKEN permissions..."
+          gh auth status
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Clean up old workflow runs
         run: |
